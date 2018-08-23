@@ -7,64 +7,54 @@ services:
     ports:
       - 15673:15672
     networks:
-      default:
-        driver: my
-
+      my:
   registry:
     container_name: registry
     image: spring-boot-cloud/registry
     ports:
       - "8761:8761"
     networks:
-      default:
-        driver: my
+      my:
   config:
     container_name: config
     image: spring-boot-cloud/config
     ports:
       - "8888:8888"
     networks:
-      default:
-        driver: my
+      my:
   monitor:
     container_name: monitor
     image: spring-boot-cloud/monitor
     ports:
       - "8040:8040"
     networks:
-      default:
-        driver: my
+      my:
   zipkin:
     container_name: zipkin
     image: spring-boot-cloud/zipkin
     ports:
       - "9411:9411"
     networks:
-      default:
-        driver: my
+      my:
   gateway:
     container_name: gateway
     image: spring-boot-cloud/gateway
     ports:
       - "8060:8060"
     networks:
-      default:
-        driver: my
+      my:
   auth-service:
     container_name: auth
     image: spring-boot-cloud/auth-service
     ports:
       - "5000:5000"
     networks:
-      default:
-        driver: my
+      my:
   svca-service:
     image: spring-boot-cloud/svca-service
     networks:
-      default:
-        driver: my
+      my:
   svcb-service:
     image: spring-boot-cloud/svcb-service
     networks:
-      default:
-        driver: my
+      my:
