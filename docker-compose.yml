@@ -6,54 +6,65 @@ services:
     restart: always
     ports:
       - 15673:15672
-    net: my
+    networks:
+      my:
+        driver: bridge
 
   registry:
     container_name: registry
     image: spring-boot-cloud/registry
     ports:
       - "8761:8761"
-    net: my
-
+    networks:
+      my:
+        driver: bridge
   config:
     container_name: config
     image: spring-boot-cloud/config
     ports:
       - "8888:8888"
-    net: my
-
+    networks:
+      my:
+        driver: bridge
   monitor:
     container_name: monitor
     image: spring-boot-cloud/monitor
     ports:
       - "8040:8040"
-    net: my
-
+    networks:
+      my:
+        driver: bridge
   zipkin:
     container_name: zipkin
     image: spring-boot-cloud/zipkin
     ports:
       - "9411:9411"
-    net: my
-
+    networks:
+      my:
+        driver: bridge
   gateway:
     container_name: gateway
     image: spring-boot-cloud/gateway
     ports:
       - "8060:8060"
-    net: my
-
+    networks:
+      my:
+        driver: bridge
   auth-service:
     container_name: auth
     image: spring-boot-cloud/auth-service
     ports:
       - "5000:5000"
-    net: my
-
+    networks:
+      my:
+        driver: bridge
   svca-service:
     image: spring-boot-cloud/svca-service
-    net: my
-
+    networks:
+      my:
+        driver: bridge
   svcb-service:
     image: spring-boot-cloud/svcb-service
-    net: my
+    networks:
+      my:
+        driver: bridge
