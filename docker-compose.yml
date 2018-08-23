@@ -1,38 +1,38 @@
 version: '2'
 services:
   rabbitmq:
-      name: rabbitmq
-      image: rabbitmq:3-management
-      restart: always
-      ports:
-        - 15673:15672
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    restart: always
+    ports:
+      - 15673:15672
   registry:
-    name: registry
+    container_name: registry
     image: spring-boot-cloud/registry
     ports:
       - "8761:8761"
   config:
-    name: config
+    container_name: config
     image: spring-boot-cloud/config
     ports:
       - "8888:8888"
   monitor:
-    name: monitor
+    container_name: monitor
     image: spring-boot-cloud/monitor
     ports:
       - "8040:8040"
   zipkin:
-    name: zipkin
+    container_name: zipkin
     image: spring-boot-cloud/zipkin
     ports:
       - "9411:9411"
   gateway:
-    name: gateway
+    container_name: gateway
     image: spring-boot-cloud/gateway
     ports:
       - "8060:8060"
   auth-service:
-    name: auth
+    container_name: auth
     image: spring-boot-cloud/auth-service
     ports:
       - "5000:5000"
