@@ -48,7 +48,7 @@ services:
     networks:
       - my
   auth-service:
-    container_name: auth
+    container_name: auth-service
     image: spring-boot-cloud/auth-service
     ports:
       - "5000:5000"
